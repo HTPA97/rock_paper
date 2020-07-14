@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function computerPlay() {
+        const play = ["rock", "paper", "scissor"];
+        return play[Math.floor(Math.random() * play.length)];
+      }
+
+      function playRound(playerSelection, computerSelection) {
+        if (playerSelection == "rock" && computerSelection == "scissor") {
+          return console.log("Player wins");
+        } else if (playerSelection == "paper" && computerSelection == "rock") {
+          return console.log("Player wins");
+        } else if (
+          playerSelection == "scissor" &&
+          computerSelection == "paper"
+        ) {
+          return console.log("Player wins");
+        } else if (
+          playerSelection == "paper" &&
+          computerSelection == "scissor"
+        ) {
+          return console.log("comp wins");
+        } else if (playerSelection == "rock" && computerSelection == "paper") {
+          return console.log("comp wins");
+        } else if (
+          playerSelection == "scissor" &&
+          computerSelection == "rock"
+        ) {
+          return console.log("Player wins");
+        } else {
+          return console.log("its draw");
+        }
+      }
+      function game() {
+        for (let index = 0; index <= 5; index++) {
+          const playerSelection = window.prompt(
+            "Enter rock paper or scissor",
+            "rock"
+          );
+          console.log('Player Selected: '+playerSelection);
+          const computerSelection = computerPlay();
+          console.log('computer Selected: '+computerSelection);
+          playRound(playerSelection, computerSelection);
+        }
+      }
+    </script>
+  </body>
+</html>
